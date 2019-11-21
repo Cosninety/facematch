@@ -1,0 +1,104 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <style>
+      .errorMsg {
+          color:red;
+          display:none; }
+
+      .gridContainer{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        /* grid-row-gap: 10px; */
+        /* grid-column-gap: 15px; */
+        grid-template-rows: auto auto auto auto auto;
+        /* width: 20vw; */
+        height: 100vh;
+        }
+
+      .headshot{
+        /* grid-column: 1/span 1;
+        grid-row: 1/span 1; */
+        min-height: 20vw;
+        max-height: 20vw;
+        min-width: 20vw;
+        max-width: 20vw;
+        overflow: hidden;
+        text-align: center;
+        background-color: black;
+      }
+
+      img{
+        width: 100%;
+        text-align: center;
+      }
+/*
+      https://www.w3schools.com/howto/howto_css_flip_card.asp */
+
+
+/* use let */
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+
+<script  type="text/javascript">
+
+allCards = $(".containerMain")
+// forEach in
+// https://www.w3schools.com/cssref/tryit.asp?filename=trycss_js_grid-column
+    // $('.headshot').style.gridColumn = "2/span 2";
+    // $('.headshot').style.gridRow = "2/span 2";
+
+// https://stackoverflow.com/questions/1650299/how-do-i-change-the-id-of-a-html-element-with-javascript - <div id = 'One' onclick = "One.id = 'Two'; return false;">One</div> - nimday '13
+
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_loop_for_ex
+for (i = 0; i < 12; i++) {
+  // text += "The number is " + i + "<br>";
+  // https://stackoverflow.com/questions/16584121/change-div-id-by-javascript
+  document.getElementByClassName('.headshot').setAttribute("id", "image"+i);
+}
+
+// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+
+
+</script>
+
+
+  <title>Document</title>
+</head>
+
+<body>
+
+
+<main class = "containerMain">
+    <div class ="headshot" id = "image1">
+       <img class = "frontface"  src="images/.jpg"  alt="alt text"/>
+       <p class = "back" </p>
+    </div>
+
+    <div class ="headshot" id = "image2">
+       <img class = "frontface"  src="images/.jpg"  alt="alt text"/>
+       <p class = "back" </p>
+    </div>
+
+    <div class ="headshot" id = "image3">
+       <img class = "frontface"  src="images/.jpg"  alt="alt text"/>
+       <p class = "back" </p>
+    </div>
+
+    <div class ="headshot" id = "image4">
+       <img class = "frontface"  src="images/.jpg"  alt="alt text"/>
+       <p class = "back" </p>
+    </div>
+</main>
+
+
+
+</body>
+</html>
