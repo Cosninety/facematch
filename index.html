@@ -163,11 +163,6 @@
        <p class = "back"> </p>
     </div>
 
-    <div class ="headshot" id = "image4">
-       <img class = "frontface"  src="images/.jpg"  alt="alt text"/>
-       <p class = "back"> </p>
-    </div>
-
     <div class ="headshot" id = "image5">
        <img class = "frontface"  src="images/.jpg"  alt="alt text"/>
          <p class = "back"> </p>
@@ -257,12 +252,12 @@ $("#buttonid").click(function(){
   shuffledNumbers.forEach(shuffleId);
 });
 
-//select all divs with class headshot and assign a new id
+//select all divs with class headshot and randomly assign a new id
 function shuffleId(value,index){
     var headShot = document.getElementsByClassName('headshot')
     headi = headShot[index]
-    console.log(headi)
     $(headi).attr('id', 'image'+value);
+    console.log(value)
 }
 
 
