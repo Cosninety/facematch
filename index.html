@@ -7,7 +7,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
   <style>
-      .errorMsg {
+      .cc {
           color:red;
           display:none; }
 
@@ -120,40 +120,17 @@
         grid-column: 4/span 1;
         grid-row:4 / span 1;
       }
+
+      #buttonid{
+        grid-column: 1/span 1;
+        grid-row:5 / span 1;
+      }
 /*
       https://www.w3schools.com/howto/howto_css_flip_card.asp */
 /* use let */
 </style>
 
 
-
-<script  type="text/javascript">
-allCards = $(".containerMain")
-// forEach in
-// https://www.w3schools.com/cssref/tryit.asp?filename=trycss_js_grid-column
-    // $('.headshot').style.gridColumn = "2/span 2";
-    // $('.headshot').style.gridRow = "2/span 2";
-
-// https://stackoverflow.com/questions/1650299/how-do-i-change-the-id-of-a-html-element-with-javascript - <div id = 'One' onclick = "One.id = 'Two'; return false;">One</div> - nimday '13
-
-// https://www.w3schools.com/js/tryit.asp?filename=tryjs_loop_for_ex
-// $('#shuffle').click(shuffleFunction(){
-var headShot= $(".headshot");
-console.log(headShot.id);
-
-function shuffleFunction(){
-    for (i = 1; i < 17; i++) {
-      // https://stackoverflow.com/questions/16584121/change-div-id-by-javascript
-
-    $(headShot[i-1]).attr("id", "image"+i);
-    console.log(headShot[i])
-    console.log(i)
-    }
-}
-
-// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-
-</script>
 
   <title>Document</title>
 </head>
@@ -163,10 +140,11 @@ function shuffleFunction(){
 
 <main class = "gridContainer">
 
-  <button onclick="shuffleFunction()">Shuffle</button>
+
+    <button id="buttonid">Shuffle</button>
 
     <div class ="headshot" id = "image1">
-       <img class = "frontface"  src="images/.jpg"  alt="alt text"/>
+       <img class = "frontface"  src="images/rawphotos/IMG_20191113_184629.jpg"  alt="alt text"/>
        <p class = "back"> </p>
     </div>
 
@@ -240,12 +218,12 @@ function shuffleFunction(){
      <p class = "back"> </p>
     </div>
 
-    <div class ="headshot" id = "image15">
+    <div class ="headshot " id = "image15" >
        <img class = "frontface"  src="images/.jpg"  alt="alt text"/>
    <p class = "back"> </p>
     </div>
 
-    <div class ="headshot" id = "image16">
+    <div class ="headshot 16" id = "image16">
        <img class = "frontface"  src="images/.jpg"  alt="alt text"/>
          <p class = "back"> </p>
     </div>
@@ -255,4 +233,38 @@ function shuffleFunction(){
 
 
 </body>
+
+
+<script  type="text/javascript">
+allCards = $(".containerMain")
+
+// -UTILIZED Fisher–Yates shuffle algorithm for Function: FROM  https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
+var myArray = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16'];
+
+$("#buttonid").click(function(){
+  console.log("buttonpushed")
+});
+
+$("#buttonid").click(function(){
+  shuffledNumbers = shuffle(myArray);
+  shuffledNumbers.forEach(shuffleId);
+});
+
+//select all divs with class headshot and assign a new id
+function shuffleId(value,index){
+    var headShot = document.getElementsByClassName('headshot')
+    headi = headShot[index]
+    console.log(headi)
+    $(headi).attr('id', 'image'+value);
+}
+
+
+</script>
 </html>
